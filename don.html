@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fiche d'une annonce du registre Solidarité+ : description, état, quartier approximatif et demande de don. Prototype de démonstration.">
+  <title>Annonce du registre | Solidarité+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/images.js" defer></script>
+  <script src="js/fiche.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="index.html">Solidarité<strong>+</strong></a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a class="actuel" href="dons.html">Le registre des dons</a>
+      <a href="proposer.html">Proposer un don</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+
+    <div class="nav-actions">
+      <p class="session-chip" aria-live="polite"></p>
+      <details class="nav-details">
+        <summary class="nav-burger-menu">Menu</summary>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a class="actuel" href="dons.html">Le registre des dons</a></li>
+          <li><a href="proposer.html">Proposer un don</a></li>
+          <li><a href="tableau-de-bord.html">Espace personnel</a></li>
+          <li><a href="association.html">Espace association</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="connexion.html">Se connecter</a></li>
+        </ul>
+      </details>
+      <a class="btn btn-ghost connexion-desktop" href="connexion.html">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<p class="env-note"><span class="container">Mode démonstration locale : cette fiche est fictive et conservée dans ce navigateur seul. Rien n'est envoyé à un serveur.</span></p>
+
+<main id="contenu" class="container">
+
+  <p class="fil-ariane"><a href="dons.html">Le registre des dons</a> <span aria-hidden="true">/</span> <span id="fil-titre">Annonce</span></p>
+
+  <div class="notice notice-info" id="introuvable" hidden>
+    <p><b>Annonce introuvable.</b> Cette entrée du registre n'existe pas dans les données de démonstration, ou elle a été retirée (refusée ou remise). <a href="dons.html">Retourner au registre</a>.</p>
+  </div>
+
+  <article class="detail" id="fiche" hidden>
+    <div>
+      <p class="num" id="fiche-num">N°</p>
+      <h1 id="fiche-titre"></h1>
+      <p class="lede" id="fiche-description"></p>
+
+      <dl class="fiche">
+        <div><dt>Catégorie</dt><dd id="fiche-categorie"></dd></div>
+        <div><dt>État</dt><dd id="fiche-etat"></dd></div>
+        <div><dt>Quartier approximatif</dt><dd id="fiche-quartier"></dd></div>
+        <div><dt>Publiée le</dt><dd id="fiche-date"></dd></div>
+        <div><dt>Statut</dt><dd id="fiche-statut"></dd></div>
+        <div><dt>Donneur</dt><dd id="fiche-donneur"></dd></div>
+      </dl>
+
+      <p class="securite-note">Conseil de prudence : rendez-vous dans un lieu public ou avec une association, vérifiez l'objet avant la remise et n'envoyez jamais d'argent : un don gratuit ne coûte rien de part et d'autre.</p>
+    </div>
+
+    <div class="demande-encart" id="encart-demande">
+      <p class="statut" id="encart-statut"></p>
+      <h2 class="titre-encart">Demander ce don</h2>
+      <p id="encart-explication">Vous indiquez un prénom et une phrase, rien d'autre. Le donneur (ou l'association, dans la démonstration) répond : acceptée, refusée, puis remise en main propre.</p>
+
+      <form id="form-demande" novalidate>
+        <div class="field">
+          <label for="req-nom">Votre prénom (démonstration)</label>
+          <input id="req-nom" name="nom" type="text" maxlength="40" autocomplete="given-name" aria-describedby="req-nom-err">
+          <p class="erreur" id="req-nom-err" hidden>Indiquez un prénom ou un surnom, même fictif : c'est le seul champ obligatoire.</p>
+        </div>
+        <div class="field">
+          <label for="req-note">Une phrase de contexte (facultatif)</label>
+          <input id="req-note" name="note" type="text" maxlength="120" placeholder="Ex. : cartable pour la rentrée d'un cousin">
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer la demande (démo)</button>
+      </form>
+
+      <div class="notice notice-succes" id="demande-confirmee" hidden role="status">
+        <p><b>Demande enregistrée dans ce navigateur (démonstration).</b> Aucun message réel n'a été envoyé. Son statut commence à « En attente » : suivez-le dans <a href="demandes.html">Mes demandes</a>.</p>
+      </div>
+
+      <div class="notice notice-info" id="encart-indisponible" hidden>
+        <p>Cette annonce n'accepte pas de nouvelle demande : elle est réservée, remise, refusée ou en attente de validation. Le registre montre les autres entrées disponibles.</p>
+        <p><a href="dons.html">Voir les annonces disponibles</a></p>
+      </div>
+
+      <ol class="etapes-suivantes" aria-label="Prochaines étapes après la demande">
+        <li>La demande apparaît à « En attente » dans Mes demandes.</li>
+        <li>Le donneur ou l'association accepte ou refuse (démonstration).</li>
+        <li>Acceptée, la demande passe à « Finalisée » après la remise en main propre.</li>
+      </ol>
+    </div>
+  </article>
+
+  <section class="section" aria-labelledby="autres-annonces" id="section-autres">
+    <h2 id="autres-annonces">Autres entrées du registre</h2>
+    <div class="registre" id="autres" aria-live="polite"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer container">
+  <div>
+    <p class="wordmark">Solidarité<strong>+</strong></p>
+    <p>Prototype étudiant EMSI, année 2026, réalisé dans le cadre de l'ODD 1 : Pas de pauvreté. Ce n'est pas une plateforme en service : une expérimentation locale reste à mener.</p>
+  </div>
+  <nav aria-label="Liens du site">
+    <h4>Application</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="dons.html">Le registre des dons</a></li>
+      <li><a href="proposer.html">Proposer un don</a></li>
+      <li><a href="demandes.html">Mes demandes</a></li>
+      <li><a href="association.html">Espace association</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Infos projet">
+    <h4>Projet</h4>
+    <ul>
+      <li><a href="a-propos.html">À propos et ODD 1</a></li>
+      <li><a href="https://sdgs.un.org/goals/goal1" target="_blank" rel="noopener noreferrer">ODD 1 sur le site de l'ONU</a></li>
+      <li><a href="connexion.html">Connexion de démonstration</a></li>
+    </ul>
+  </nav>
+  <div class="credits-photos">
+    <p>Illustrations vectorielles réalisées pour ce prototype (aucune photographie externe). Pour utiliser de vraies photos : remplacez les fichiers du dossier assets/img et ajustez le tableau IMG_PAR_CATEGORIE dans js/data.js. Les objets décrivent des catégories, pas des annonces réelles.</p>
+  </div>
+</footer>
+
+</body>
+</html>

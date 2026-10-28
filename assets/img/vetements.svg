@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration de la catégorie Vêtements">
+  <!-- Solidarité+ : illustration propre au prototype -->
+  <rect width="800" height="600" fill="#ECE9E4"/>
+  <rect x="60" y="500" width="680" height="10" fill="#171717"/>
+
+  <!-- Pile de trois vêtements pliés -->
+  <g stroke="#171717" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="200" y="400" width="400" height="90" rx="14" fill="#F5F4F1"/>
+    <rect x="220" y="305" width="380" height="90" rx="14" fill="#F5F4F1"/>
+    <rect x="240" y="210" width="360" height="90" rx="14" fill="#F5F4F1"/>
+    <line x1="260" y1="445" x2="540" y2="445" fill="none"/>
+    <line x1="280" y1="350" x2="540" y2="350" fill="none"/>
+    <line x1="300" y1="255" x2="540" y2="255" fill="none"/>
+  </g>
+
+  <!-- Col plié au sommet -->
+  <path d="M370 210 q40 -34 80 0" fill="none" stroke="#171717" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Étiquette rouge accrochée -->
+  <g transform="rotate(-14 600 180)">
+    <rect x="565" y="150" width="96" height="120" rx="8" fill="#BE2034"/>
+    <circle cx="613" cy="176" r="8" fill="#F9F6F2"/>
+    <text x="613" y="225" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="#F9F6F2">0 DH</text>
+  </g>
+
+  <text x="70" y="105" font-family="Georgia, serif" font-size="44" fill="#171717">Vêtements</text>
+  <line x1="70" y1="122" x2="255" y2="122" stroke="#171717" stroke-width="4"/>
+</svg>

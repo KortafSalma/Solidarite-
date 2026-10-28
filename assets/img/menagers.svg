@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration de la catégorie Articles ménagers">
+  <!-- Solidarité+ : illustration propre au prototype -->
+  <rect width="800" height="600" fill="#ECE9E4"/>
+  <rect x="60" y="500" width="680" height="10" fill="#171717"/>
+
+  <!-- Pile d'assiettes -->
+  <g stroke="#171717" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="330" cy="455" rx="150" ry="40" fill="#F5F4F1"/>
+    <ellipse cx="330" cy="415" rx="150" ry="40" fill="#F5F4F1"/>
+    <ellipse cx="330" cy="375" rx="150" ry="40" fill="#F5F4F1"/>
+  </g>
+
+  <!-- Bol -->
+  <g stroke="#171717" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="#F5F4F1">
+    <path d="M520 420 Q520 490 600 490 Q680 490 680 420 Z"/>
+    <ellipse cx="600" cy="420" rx="80" ry="22"/>
+  </g>
+
+  <!-- Théière au-dessus -->
+  <g stroke="#171717" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="#F5F4F1">
+    <path d="M420 240 Q420 300 500 300 Q580 300 580 240 Q580 180 500 180 Q420 180 420 240 Z"/>
+    <path d="M580 225 q46 6 40 40" fill="none"/>
+    <path d="M420 225 q-46 6 -40 40" fill="none"/>
+    <ellipse cx="500" cy="180" rx="34" ry="12"/>
+    <circle cx="500" cy="140" r="14" fill="#BE2034" stroke-width="8"/>
+  </g>
+
+  <text x="70" y="105" font-family="Georgia, serif" font-size="44" fill="#171717">Articles ménagers</text>
+  <line x1="70" y1="122" x2="335" y2="122" stroke="#171717" stroke-width="4"/>
+</svg>

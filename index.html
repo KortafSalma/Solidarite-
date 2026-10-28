@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solidarité+ : plateforme de démonstration qui rapproche les personnes qui donnent, celles qui en ont besoin et les associations locales. Prototype étudiant pour l'ODD 1.">
+  <title>Solidarité+ : le registre des dons de quartier | ODD 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/images.js" defer></script>
+  <script src="js/home.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="index.html">Solidarité<strong>+</strong></a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a class="actuel" href="index.html">Accueil</a>
+      <a href="dons.html">Le registre des dons</a>
+      <a href="proposer.html">Proposer un don</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+
+    <div class="nav-actions">
+      <p class="session-chip" aria-live="polite"></p>
+      <details class="nav-details">
+        <summary class="nav-burger-menu">Menu</summary>
+        <ul>
+          <li><a class="actuel" href="index.html">Accueil</a></li>
+          <li><a href="dons.html">Le registre des dons</a></li>
+          <li><a href="proposer.html">Proposer un don</a></li>
+          <li><a href="tableau-de-bord.html">Espace personnel</a></li>
+          <li><a href="association.html">Espace association</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="connexion.html">Se connecter</a></li>
+        </ul>
+      </details>
+      <a class="btn btn-ghost connexion-desktop" href="connexion.html">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<p class="env-note"><span class="container">Mode démonstration locale : toutes les données sont fictives et conservées dans ce navigateur seul, <b>rien n'est envoyé à un serveur</b>.</span></p>
+
+<main id="contenu">
+
+  <section class="container hero">
+    <div class="hero-points">
+      <h1>Un objet utile.<br>Une aide concrète.</h1>
+      <p class="lede">Solidarité+ facilite la rencontre entre les personnes qui donnent, celles qui en ont besoin et les associations locales.</p>
+      <div class="one-action hero-actions">
+        <a class="btn btn-primary" href="dons.html">Trouver un don</a>
+        <a class="btn btn-ghost" href="proposer.html">Proposer un don</a>
+      </div>
+      <p class="hero-note">Prototype étudiant. Les annonces affichées sont des exemples fictifs : demander de l'aide ici ne coûte rien et ne se justifie pas.</p>
+    </div>
+
+    <figure class="hero-figure">
+      <img src="assets/img/hero-dons.svg" alt="Illustration du registre des dons : une caisse ouverte, un cahier et un tricot plié, étiquette « 0 DH »" width="800" height="600" fetchpriority="high">
+      <figcaption>Illustration du prototype (vectorielle, aucun réseau requis). Les annonces restent des exemples fictifs.</figcaption>
+    </figure>
+  </section>
+
+  <section class="container trois-etapes" aria-labelledby="titre-etapes">
+    <h2 id="titre-etapes">Trois étapes, une remise en main propre</h2>
+    <ol>
+      <li>
+        <div>
+          <h3>Vous publiez l'objet</h3>
+          <p>Un titre, un état, un quartier approximatif. Jamais d'adresse ni de numéro de téléphone.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Une association vérifie l'annonce</h3>
+          <p>Dans la démonstration, un modérateur la valide, la refuse ou la signale.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>La remise se fait en personne</h3>
+          <p>Sans paiement de part et d'autre. Vous voyez l'objet, la personne le reçoit.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="container categories deux-cols" aria-labelledby="titre-categories">
+    <div>
+      <h2 id="titre-categories">Cinq familles d'objets, exactement</h2>
+      <p class="intro">Vêtements en bon état, fournitures scolaires, hygiène, alimentation non périssable et articles ménagers. Ouvrir une catégorie amène directement au registre.</p>
+    </div>
+    <ul class="cat-list" id="liste-categories">
+      <li><a href="dons.html?categorie=Vêtements"><span>Vêtements</span><span class="nb" data-nb="Vêtements"></span></a></li>
+      <li><a href="dons.html?categorie=Fournitures scolaires"><span>Fournitures scolaires</span><span class="nb" data-nb="Fournitures scolaires"></span></a></li>
+      <li><a href="dons.html?categorie=Hygiène"><span>Hygiène</span><span class="nb" data-nb="Hygiène"></span></a></li>
+      <li><a href="dons.html?categorie=Alimentation non périssable"><span>Alimentation non périssable</span><span class="nb" data-nb="Alimentation non périssable"></span></a></li>
+      <li><a href="dons.html?categorie=Articles ménagers"><span>Articles ménagers</span><span class="nb" data-nb="Articles ménagers"></span></a></li>
+    </ul>
+  </section>
+
+  <section class="container section annonces-choisies" aria-labelledby="titre-annonces">
+    <div class="section-titre">
+      <h2 id="titre-annonces">Sur le registre cette semaine</h2>
+      <p class="intro">Trois entrées prises parmi les données de démonstration. Le répertoire complet se consulte avec ses filtres.</p>
+    </div>
+    <div class="registre" id="annonces-accueil" aria-live="polite"></div>
+    <p><a class="btn-quiet" href="dons.html">Ouvrir le registre complet</a></p>
+  </section>
+
+  <section class="band-ink" aria-labelledby="titre-confiance">
+    <div class="container confiance">
+      <div class="conf-coeur">
+        <h2 id="titre-confiance">Vie privée et dignité, dès la première annonce</h2>
+        <p>Demander un objet essentiel ne doit rien coûter : ni argent, ni justification, ni humiliation. Le prototype applique cette règle dans chaque écran.</p>
+      </div>
+      <ul class="conf-points on-band">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+          <span>
+            <b>Aucune adresse exacte publiée</b>
+            <small>L'annonce montre un quartier approximatif. La remise se décide hors ligne, entre les parties.</small>
+          </span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+          <span>
+            <b>Aucun justificatif à fournir</b>
+            <small>La demande indique l'objet et un quartier, rien d'autre. Pas de dossier, pas de photos de maison.</small>
+          </span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>
+          <span>
+            <b>Un signalement en un clic</b>
+            <small>Chaque annonce peut être signalée à l'association qui la vérifie, comme partout dans la démo.</small>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band-accent" aria-labelledby="titre-cta">
+    <div class="container band-contenu">
+      <div>
+        <h2 id="titre-cta">Un objet qui dort est un objet qui manque à quelqu'un</h2>
+        <p>Manteaux, cartables, conserves, vaisselle : publier prend trois minutes et la modération est gratuite, comme toute la plateforme.</p>
+      </div>
+      <a class="btn-quiet on-band-quiet" href="proposer.html">Proposer maintenant</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer container">
+  <div>
+    <p class="wordmark">Solidarité<strong>+</strong></p>
+    <p>Prototype étudiant EMSI, année 2026, réalisé dans le cadre de l'ODD 1 : Pas de pauvreté. Ce n'est pas une plateforme en service : une expérimentation locale reste à mener.</p>
+  </div>
+  <nav aria-label="Liens du site">
+    <h4>Application</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="dons.html">Le registre des dons</a></li>
+      <li><a href="proposer.html">Proposer un don</a></li>
+      <li><a href="demandes.html">Mes demandes</a></li>
+      <li><a href="association.html">Espace association</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Infos projet">
+    <h4>Projet</h4>
+    <ul>
+      <li><a href="a-propos.html">À propos et ODD 1</a></li>
+      <li><a href="https://sdgs.un.org/goals/goal1" target="_blank" rel="noopener noreferrer">ODD 1 sur le site de l'ONU</a></li>
+      <li><a href="connexion.html">Connexion de démonstration</a></li>
+    </ul>
+  </nav>
+  <div class="credits-photos">
+    <p>Illustrations vectorielles réalisées pour ce prototype (aucune photographie externe). Pour utiliser de vraies photos : remplacez les fichiers du dossier assets/img et ajustez le tableau IMG_PAR_CATEGORIE dans js/data.js. Les objets décrivent des catégories, pas des annonces réelles.</p>
+  </div>
+</footer>
+
+</body>
+</html>

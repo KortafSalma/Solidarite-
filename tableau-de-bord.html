@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Espace personnel de démonstration Solidarité+ : historique de vos annonces et de vos demandes de dons, avec leurs statuts.">
+  <title>Espace personnel | Solidarité+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/bord.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="index.html">Solidarité<strong>+</strong></a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="dons.html">Le registre des dons</a>
+      <a href="proposer.html">Proposer un don</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+
+    <div class="nav-actions">
+      <p class="session-chip" aria-live="polite"></p>
+      <details class="nav-details">
+        <summary class="nav-burger-menu">Menu</summary>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="dons.html">Le registre des dons</a></li>
+          <li><a href="proposer.html">Proposer un don</a></li>
+          <li><a class="actuel" href="tableau-de-bord.html">Espace personnel</a></li>
+          <li><a href="association.html">Espace association</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="connexion.html">Se connecter</a></li>
+        </ul>
+      </details>
+      <a class="btn btn-ghost connexion-desktop" href="connexion.html">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<p class="env-note"><span class="container">Mode démonstration locale : cet espace ne montre que ce qui a été créé dans ce navigateur, plus les exemples fictifs livrés avec le prototype. Rien n'est envoyé à un serveur.</span></p>
+
+<main id="contenu" class="container">
+
+  <section class="page-intro">
+    <h1>Espace personnel</h1>
+    <p>L'historique de ce navigateur : vos annonces en haut, vos demandes de dons en dessous. Une connexion réelle, avec comptes et sécurité, exigerait un serveur : ce prototype n'en a pas.</p>
+  </section>
+
+  <div class="acces-encart" id="acces">
+    <p><b>Session de démonstration.</b> Vous naviguez sans compte : c'est suffisant pour tout le prototype. <a href="connexion.html">Se connecter en démonstration</a> remplit simplement le nom affiché dans l'en-tête.</p>
+  </div>
+
+  <div class="onglets" role="tablist" aria-label="Historique">
+    <button type="button" role="tab" aria-selected="true" data-panneau="panneau-dons" id="onglet-dons">Mes annonces</button>
+    <button type="button" role="tab" aria-selected="false" data-panneau="panneau-demandes" id="onglet-demandes">Mes demandes</button>
+  </div>
+
+  <section class="panneau" id="panneau-dons" role="tabpanel" aria-labelledby="onglet-dons">
+    <h2>Vos annonces publiées depuis ce navigateur</h2>
+    <p class="resultats-bar">Chaque annonce commence à "En attente" jusqu'à la validation d'une association fictive. Vous pouvez changer son statut ici, comme un donneur le ferait.</p>
+    <div class="entree-stack" id="liste-mes-dons" aria-live="polite"></div>
+    <div class="vide" id="vide-dons" hidden>
+      <h3>Aucune annonce publiée pour l'instant</h3>
+      <p>Publier un objet prend trois minutes : titre, catégorie, état, quartier approximatif et deux phrases de description.</p>
+      <a class="btn btn-primary" href="proposer.html">Proposer un don</a>
+    </div>
+  </section>
+
+  <section class="panneau" id="panneau-demandes" role="tabpanel" aria-labelledby="onglet-demandes" hidden>
+    <h2>Vos demandes de dons</h2>
+    <p class="resultats-bar">Le suivi complet des statuts se trouve dans <a href="demandes.html">Mes demandes</a>. Ici, la même liste, en résumé.</p>
+    <div class="entree-stack" id="liste-mes-demandes" aria-live="polite"></div>
+    <div class="vide" id="vide-demandes" hidden>
+      <h3>Aucune demande envoyée pour l'instant</h3>
+      <p>Ouvrez une annonce du registre et demandez-la : la demande apparaîtra ici avec son statut.</p>
+      <a class="btn btn-primary" href="dons.html">Trouver un don</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer container">
+  <div>
+    <p class="wordmark">Solidarité<strong>+</strong></p>
+    <p>Prototype étudiant EMSI, année 2026, réalisé dans le cadre de l'ODD 1 : Pas de pauvreté. Ce n'est pas une plateforme en service : une expérimentation locale reste à mener.</p>
+  </div>
+  <nav aria-label="Liens du site">
+    <h4>Application</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="dons.html">Le registre des dons</a></li>
+      <li><a href="proposer.html">Proposer un don</a></li>
+      <li><a href="demandes.html">Mes demandes</a></li>
+      <li><a href="association.html">Espace association</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Infos projet">
+    <h4>Projet</h4>
+    <ul>
+      <li><a href="a-propos.html">À propos et ODD 1</a></li>
+      <li><a href="https://sdgs.un.org/goals/goal1" target="_blank" rel="noopener noreferrer">ODD 1 sur le site de l'ONU</a></li>
+      <li><a href="connexion.html">Connexion de démonstration</a></li>
+    </ul>
+  </nav>
+  <div class="credits-photos">
+    <p>Illustrations vectorielles réalisées pour ce prototype (aucune photographie externe). Pour utiliser de vraies photos : remplacez les fichiers du dossier assets/img et ajustez le tableau IMG_PAR_CATEGORIE dans js/data.js. Les objets décrivent des catégories, pas des annonces réelles.</p>
+  </div>
+</footer>
+
+</body>
+</html>

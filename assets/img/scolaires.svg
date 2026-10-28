@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration de la catégorie Fournitures scolaires">
+  <!-- Solidarité+ : illustration propre au prototype -->
+  <rect width="800" height="600" fill="#ECE9E4"/>
+  <rect x="60" y="500" width="680" height="10" fill="#171717"/>
+
+  <!-- Cahier ouvert -->
+  <g stroke="#171717" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="#F5F4F1">
+    <path d="M170 420 Q400 380 400 400 Q400 380 630 420 L630 250 Q400 210 400 230 Q400 210 170 250 Z"/>
+    <path d="M400 230 L400 400"/>
+    <line x1="200" y1="285" x2="370" y2="262" fill="none"/>
+    <line x1="200" y1="330" x2="370" y2="307" fill="none"/>
+    <line x1="430" y1="262" x2="600" y2="285" fill="none"/>
+    <line x1="430" y1="307" x2="600" y2="330" fill="none"/>
+  </g>
+
+  <!-- Crayon posé en travers -->
+  <g transform="rotate(24 545 160)">
+    <rect x="470" y="140" width="170" height="30" rx="6" fill="#F5F4F1" stroke="#171717" stroke-width="8"/>
+    <path d="M640 140 l36 15 l-36 15 Z" fill="#BE2034" stroke="#171717" stroke-width="8" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Règle rouge -->
+  <g transform="rotate(-6 150 120)">
+    <rect x="90" y="105" width="200" height="34" rx="4" fill="#BE2034"/>
+    <line x1="120" y1="105" x2="120" y2="125" stroke="#F9F6F2" stroke-width="5"/>
+    <line x1="160" y1="105" x2="160" y2="119" stroke="#F9F6F2" stroke-width="5"/>
+    <line x1="200" y1="105" x2="200" y2="125" stroke="#F9F6F2" stroke-width="5"/>
+    <line x1="240" y1="105" x2="240" y2="119" stroke="#F9F6F2" stroke-width="5"/>
+  </g>
+
+  <text x="70" y="560" font-family="Georgia, serif" font-size="44" fill="#171717">Fournitures scolaires</text>
+</svg>

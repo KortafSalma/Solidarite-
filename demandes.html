@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Suivre ses demandes de dons sur Solidarité+ : statut en attente, acceptée, refusée ou finalisée. Démonstration locale.">
+  <title>Mes demandes | Solidarité+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/demandes.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="index.html">Solidarité<strong>+</strong></a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="dons.html">Le registre des dons</a>
+      <a href="proposer.html">Proposer un don</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+
+    <div class="nav-actions">
+      <p class="session-chip" aria-live="polite"></p>
+      <details class="nav-details">
+        <summary class="nav-burger-menu">Menu</summary>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="dons.html">Le registre des dons</a></li>
+          <li><a href="proposer.html">Proposer un don</a></li>
+          <li><a class="actuel" href="tableau-de-bord.html">Espace personnel</a></li>
+          <li><a href="association.html">Espace association</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="connexion.html">Se connecter</a></li>
+        </ul>
+      </details>
+      <a class="btn btn-ghost connexion-desktop" href="connexion.html">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<p class="env-note"><span class="container">Mode démonstration locale : vos demandes ne sont envoyées nulle part et restent dans ce navigateur. Les statuts changent depuis l'espace association de la démo.</span></p>
+
+<main id="contenu" class="container">
+
+  <section class="page-intro">
+    <h1>Mes demandes</h1>
+    <p>Chaque demande commence à "En attente", puis une personne du donneur côté association l'accepte ou la refuse, et la remise en main propre la finalise. Vous n'avez rien à justifier : demander est gratuit.</p>
+  </section>
+
+  <div class="toolbar" role="search" aria-label="Filtrer mes demandes">
+    <label class="field">
+      <span>Filtrer par statut</span>
+      <select id="filtre-statut">
+        <option value="">Tous les statuts</option>
+        <option>Attente</option>
+        <option>Acceptée</option>
+        <option>Refusée</option>
+        <option>Finalisée</option>
+      </select>
+    </label>
+    <p class="resultats-bar">
+      <span id="compte-demandes" aria-live="polite" role="status"></span>
+    </p>
+  </div>
+
+  <section aria-labelledby="titre-mes-demandes">
+    <h2 id="titre-mes-demandes">Vos demandes envoyées depuis ce navigateur</h2>
+    <div class="entree-stack" id="liste-mes-demandes" aria-live="polite"></div>
+    <div class="vide" id="vide-demandes" hidden>
+      <h3>Aucune demande pour l'instant</h3>
+      <p>Quand vous demanderez un don du registre, elle apparaîtra ici avec son statut. La démo ne contient aucune demande de votre part pour le moment.</p>
+      <a class="btn btn-primary" href="dons.html">Trouver un don</a>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="titre-exemples">
+    <h2 id="titre-exemples">Demandes d'exemple, pour voir les statuts</h2>
+    <p class="resultats-bar">Envoyées par des personnes fictives : elles illustrent chaque statut possible, jusqu'à la finalisation.</p>
+    <div class="entree-stack" id="liste-exemples" aria-live="polite"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer container">
+  <div>
+    <p class="wordmark">Solidarité<strong>+</strong></p>
+    <p>Prototype étudiant EMSI, année 2026, réalisé dans le cadre de l'ODD 1 : Pas de pauvreté. Ce n'est pas une plateforme en service : une expérimentation locale reste à mener.</p>
+  </div>
+  <nav aria-label="Liens du site">
+    <h4>Application</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="dons.html">Le registre des dons</a></li>
+      <li><a href="proposer.html">Proposer un don</a></li>
+      <li><a href="tableau-de-bord.html">Espace personnel</a></li>
+      <li><a href="association.html">Espace association</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Infos projet">
+    <h4>Projet</h4>
+    <ul>
+      <li><a href="a-propos.html">À propos et ODD 1</a></li>
+      <li><a href="https://sdgs.un.org/goals/goal1" target="_blank" rel="noopener noreferrer">ODD 1 sur le site de l'ONU</a></li>
+      <li><a href="connexion.html">Connexion de démonstration</a></li>
+    </ul>
+  </nav>
+  <div class="credits-photos">
+    <p>Illustrations vectorielles réalisées pour ce prototype (aucune photographie externe). Pour utiliser de vraies photos : remplacez les fichiers du dossier assets/img et ajustez le tableau IMG_PAR_CATEGORIE dans js/data.js. Les objets décrivent des catégories, pas des annonces réelles.</p>
+  </div>
+</footer>
+
+</body>
+</html>

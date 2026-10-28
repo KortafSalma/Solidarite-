@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Le registre des dons de Solidarité+ : rechercher un objet essentiel par nom, catégorie, quartier et état. Données de démonstration.">
+  <title>Le registre des dons | Solidarité+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/registre.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="index.html">Solidarité<strong>+</strong></a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a class="actuel" href="dons.html">Le registre des dons</a>
+      <a href="proposer.html">Proposer un don</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+
+    <div class="nav-actions">
+      <p class="session-chip" aria-live="polite"></p>
+      <details class="nav-details">
+        <summary class="nav-burger-menu">Menu</summary>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a class="actuel" href="dons.html">Le registre des dons</a></li>
+          <li><a href="proposer.html">Proposer un don</a></li>
+          <li><a href="tableau-de-bord.html">Espace personnel</a></li>
+          <li><a href="association.html">Espace association</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="connexion.html">Se connecter</a></li>
+        </ul>
+      </details>
+      <a class="btn btn-ghost connexion-desktop" href="connexion.html">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<p class="env-note"><span class="container">Mode démonstration locale : toutes les annonces sont fictives et conservées dans ce navigateur seul. Rien n'est envoyé à un serveur.</span></p>
+
+<main id="contenu" class="container">
+
+  <section class="page-intro">
+    <h1>Le registre des dons</h1>
+    <p>Chaque ligne est un objet de démonstration offert gratuitement. Recherchez par nom, catégorie ou quartier approximatif : l'adresse exacte du donneur n'apparaît jamais en public.</p>
+  </section>
+
+  <form class="toolbar" id="filtres" role="search" aria-label="Rechercher dans le registre">
+    <label class="field">
+      <span>Nom de l'objet</span>
+      <input type="search" id="recherche" name="q" placeholder="manteau, cartable, riz…" aria-describedby="compte-resultats">
+    </label>
+
+    <label class="field">
+      <span>Catégorie</span>
+      <select id="categorie" name="categorie">
+        <option value="">Toutes les catégories</option>
+        <option>Vêtements</option>
+        <option>Fournitures scolaires</option>
+        <option>Hygiène</option>
+        <option>Alimentation non périssable</option>
+        <option>Articles ménagers</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>Quartier approximatif</span>
+      <select id="quartier" name="quartier">
+        <option value="">Tous les quartiers</option>
+        <option value="Casablanca">Casablanca</option>
+        <option value="Rabat">Rabat</option>
+        <option value="Mohammedia">Mohammedia</option>
+        <option value="Settat">Settat</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>État</span>
+      <select id="etat" name="etat">
+        <option value="">Tous les états</option>
+        <option>Excellent</option>
+        <option>Bon</option>
+        <option>Moyen</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>Trier par</span>
+      <select id="tri" name="tri">
+        <option value="recent">Les plus récentes</option>
+        <option value="ancien">Les plus anciennes</option>
+        <option value="titre">Titre de A à Z</option>
+      </select>
+    </label>
+  </form>
+
+  <section aria-labelledby="resultats-registre">
+    <h2 id="resultats-registre" class="sr-only">Résultats de la recherche</h2>
+    <div class="resultats-bar">
+      <p id="compte-resultats" aria-live="polite" role="status"><b>0</b> annonce du registre</p>
+      <button type="button" class="btn-quiet" id="reinitialiser">Réinitialiser</button>
+    </div>
+
+    <div class="chargement" id="chargement" hidden>
+      <div class="filet-rotation" aria-hidden="true"></div>
+      <span role="status">Ouverture de la page : chargement du registre de démonstration (quelques instants volontaires)</span>
+    </div>
+
+    <div id="panneau-erreur" class="notice notice-erreur" hidden>
+      <p>Erreur de chargement : le stockage local de ce navigateur est indisponible. Aucune donnée ne peut être lue ni enregistrée (mode navigation privée ou quota verrouillé). La page ne peut pas fonctionner sans stockage local.</p>
+      <p><button type="button" class="btn-quiet" id="reessayer">Réessayer</button></p>
+    </div>
+
+    <div class="registre" id="liste-annonces" aria-live="polite" aria-busy="true"></div>
+
+    <div class="vide" id="etat-vide" hidden>
+      <h3>Rien dans le registre pour maintenant</h3>
+      <p>Aucune annonce ne répond à votre recherche. Élargissez le quartier ou la catégorie : dans le prototype, le registre ne contient que douze entrées de démonstration.</p>
+      <button type="button" class="btn-quiet" id="voir-tout">Voir tout le registre</button>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer container">
+  <div>
+    <p class="wordmark">Solidarité<strong>+</strong></p>
+    <p>Prototype étudiant EMSI, année 2026, réalisé dans le cadre de l'ODD 1 : Pas de pauvreté. Ce n'est pas une plateforme en service : une expérimentation locale reste à mener.</p>
+  </div>
+  <nav aria-label="Liens du site">
+    <h4>Application</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="proposer.html">Proposer un don</a></li>
+      <li><a href="demandes.html">Mes demandes</a></li>
+      <li><a href="tableau-de-bord.html">Espace personnel</a></li>
+      <li><a href="association.html">Espace association</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Infos projet">
+    <h4>Projet</h4>
+    <ul>
+      <li><a href="a-propos.html">À propos et ODD 1</a></li>
+      <li><a href="https://sdgs.un.org/goals/goal1" target="_blank" rel="noopener noreferrer">ODD 1 sur le site de l'ONU</a></li>
+      <li><a href="connexion.html">Connexion de démonstration</a></li>
+    </ul>
+  </nav>
+  <div class="credits-photos">
+    <p>Illustrations vectorielles réalisées pour ce prototype (aucune photographie externe). Pour utiliser de vraies photos : remplacez les fichiers du dossier assets/img et ajustez le tableau IMG_PAR_CATEGORIE dans js/data.js. Les objets décrivent des catégories, pas des annonces réelles.</p>
+  </div>
+</footer>
+
+</body>
+</html>

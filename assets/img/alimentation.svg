@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration de la catégorie Alimentation non périssable">
+  <!-- Solidarité+ : illustration propre au prototype -->
+  <rect width="800" height="600" fill="#ECE9E4"/>
+  <rect x="60" y="500" width="680" height="10" fill="#171717"/>
+
+  <!-- Boîte de conserve -->
+  <g stroke="#171717" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="#F5F4F1">
+    <path d="M200 210 L200 460 Q200 480 260 480 Q320 480 320 460 L320 210"/>
+    <ellipse cx="260" cy="210" rx="60" ry="22"/>
+    <rect x="200" y="300" width="120" height="64" fill="#BE2034" stroke="none"/>
+  </g>
+
+  <!-- Sac de riz -->
+  <g stroke="#171717" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="#F5F4F1">
+    <path d="M440 480 Q420 330 470 240 L470 200 L610 200 L610 240 Q660 330 640 480 Z"/>
+    <path d="M470 200 L470 240 L610 240 L610 200" fill="none"/>
+    <line x1="500" y1="300" x2="580" y2="300" fill="none"/>
+    <line x1="500" y1="345" x2="580" y2="345" fill="none"/>
+    <line x1="505" y1="390" x2="575" y2="390" fill="none"/>
+  </g>
+
+  <!-- Petit tampon rouge sur le sac -->
+  <circle cx="540" cy="430" r="26" fill="#BE2034"/>
+
+  <text x="70" y="105" font-family="Georgia, serif" font-size="40" fill="#171717">Alimentation non périssable</text>
+  <line x1="70" y1="122" x2="410" y2="122" stroke="#171717" stroke-width="4"/>
+</svg>

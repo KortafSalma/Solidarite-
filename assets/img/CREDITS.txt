@@ -1,0 +1,32 @@
+Illustrations du prototype Solidarité+
+======================================
+
+Toutes les illustrations du site sont des fichiers SVG (dessin
+vectoriel) réalisés spécifiquement pour ce prototype. Aucune
+photographie externe n'est utilisée : rien à créditer, rien à
+télécharger, aucune image cassée possible.
+
+Fichiers de ce dossier :
+
+  hero-dons.svg       Illustration du héros (accueil)
+  vetements.svg       Catégorie Vêtements
+  scolaires.svg       Catégorie Fournitures scolaires
+  hygene.svg          Catégorie Hygiène
+  alimentation.svg    Catégorie Alimentation non périssable
+  menagers.svg        Catégorie Articles ménagers
+
+Les objets dessinés illustrent des catégories de dons ; ils ne
+représentent aucune annonce réelle.
+
+Utiliser de vraies photographies (facultatif)
+---------------------------------------------
+
+1. Déposez vos photos dans ce dossier, par exemple photo-001.jpg.
+2. Dans js/data.js, mettez à jour le tableau IMG_PAR_CATEGORIE
+   (une entrée par catégorie) ou le champ "image" d'une donation.
+3. Sur proposer.html, le champ photo facultatif accepte aussi une
+   image chargée par le donneur : elle reste dans ce navigateur.
+
+Si une image est manquante ou mal nommée, la figure qui la contient
+se masque d'elle-même (js/images.js) : jamais d'image cassée à
+l'écran.

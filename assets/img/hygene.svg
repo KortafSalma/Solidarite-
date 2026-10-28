@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration de la catégorie Hygiène">
+  <!-- Solidarité+ : illustration propre au prototype -->
+  <rect width="800" height="600" fill="#ECE9E4"/>
+  <rect x="60" y="500" width="680" height="10" fill="#171717"/>
+
+  <!-- Flacon pompe -->
+  <g stroke="#171717" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="#F5F4F1">
+    <rect x="200" y="240" width="130" height="260" rx="16"/>
+    <line x1="230" y1="275" x2="300" y2="275" fill="none"/>
+    <line x1="230" y1="310" x2="300" y2="310" fill="none"/>
+    <rect x="248" y="190" width="34" height="50" fill="#F5F4F1"/>
+    <path d="M248 190 l-30 -22 l60 0 l0 22" fill="#F5F4F1"/>
+  </g>
+
+  <!-- Deux savons scellés -->
+  <g stroke="#171717" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="430" y="420" width="190" height="80" rx="26" fill="#F5F4F1"/>
+    <rect x="460" y="330" width="190" height="80" rx="26" fill="#F5F4F1"/>
+    <path d="M500 300 q22 -30 44 0 q-22 24 -44 0" fill="#BE2034" stroke-width="8"/>
+  </g>
+
+  <!-- Goutte rouge -->
+  <path d="M610 200 q34 44 0 78 q-34 -34 0 -78" fill="#BE2034"/>
+
+  <text x="70" y="105" font-family="Georgia, serif" font-size="44" fill="#171717">Hygiène</text>
+  <line x1="70" y1="122" x2="205" y2="122" stroke="#171717" stroke-width="4"/>
+</svg>

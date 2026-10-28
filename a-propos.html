@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="À propos de Solidarité+ : contribution visée à l'ODD 1 (Pas de pauvreté), cibles 1.2 et 1.4, dimensions d'impact et limites du prototype.">
+  <title>À propos et ODD 1 | Solidarité+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/store.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="index.html">Solidarité<strong>+</strong></a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="dons.html">Le registre des dons</a>
+      <a href="proposer.html">Proposer un don</a>
+      <a class="actuel" href="a-propos.html">À propos</a>
+    </nav>
+
+    <div class="nav-actions">
+      <p class="session-chip" aria-live="polite"></p>
+      <details class="nav-details">
+        <summary class="nav-burger-menu">Menu</summary>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="dons.html">Le registre des dons</a></li>
+          <li><a href="proposer.html">Proposer un don</a></li>
+          <li><a href="tableau-de-bord.html">Espace personnel</a></li>
+          <li><a href="association.html">Espace association</a></li>
+          <li><a class="actuel" href="a-propos.html">À propos</a></li>
+          <li><a href="connexion.html">Se connecter</a></li>
+        </ul>
+      </details>
+      <a class="btn btn-ghost connexion-desktop" href="connexion.html">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<p class="env-note"><span class="container">Mode démonstration locale : cette page décrit un projet étudiant, pas un service en activité. Toutes les estimations d'impact restent des hypothèses.</span></p>
+
+<main id="contenu" class="container">
+
+  <section class="page-intro">
+    <h1>À propos du projet</h1>
+    <p>Solidarité+ est un prototype d'application web réalisé par des étudiants de l'EMSI (année 2026). Il explore une question précise : comment un objet inutilisé peut rejoindre, gratuitement et dignement, une personne qui en a besoin dans le même quartier.</p>
+  </section>
+
+  <section class="apropos-grille" aria-labelledby="titre-odd">
+
+    <div>
+      <h2 id="titre-odd">L'ODD 1 : Pas de pauvreté</h2>
+      <div class="contenu-prose">
+        <p>L'objectif de développement durable n° 1 des Nations unies vise à mettre fin à la pauvreté sous toutes ses formes, partout. Il se consulte sur la page officielle : <a href="https://sdgs.un.org/goals/goal1" target="_blank" rel="noopener noreferrer">sdgs.un.org/goals/goal1</a>.</p>
+        <p>Ce prototype se rapporte à deux cibles de cet objectif. Il s'en inspire, sans aucun lien formel ni reconnaissance par l'Organisation des Nations unies.</p>
+      </div>
+    </div>
+
+    <div class="cible-odd">
+      <div>
+        <h3>Cible 1.2</h3>
+        <p class="intro">Réduire de moitié, d'ici 2030, la proportion d'hommes, de femmes et d'enfants qui vivent dans la pauvreté sous toutes ses formes, selon les définitions nationales.</p>
+        <p class="resultats-bar">Lien visé par le prototype : mettre des biens essentiels (vêtements, hygiène, alimentation non périssable, fournitures scolaires) à portée de quartier, sans coût pour la personne qui demande.</p>
+      </div>
+      <div>
+        <h3>Cible 1.4</h3>
+        <p class="intro">Renforcer la résilience des personnes vulnérables et réduire leur exposition aux chocs économiques et sociaux.</p>
+        <blockquote>
+          « Un manteau d'hiver, un cartable ou un panier de riz ne sortiront personne de la pauvreté à eux seuls. Le prototype parie sur l'autre bout de la chaîne : le coût d'accès à l'aide, qui doit rester zéro. »
+          <footer>Hypothèse de conception du projet, à confronter à un pilotage réel</footer>
+        </blockquote>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section" aria-labelledby="titre-impact">
+    <div class="section-titre">
+      <h2 id="titre-impact">Trois dimensions d'impact, énoncées comme des hypothèses</h2>
+      <p class="intro">Rien n'est mesuré : le prototype n'a ni utilisateurs réels ni partenaires. Les tableaux ci-dessous formulent ce que le projet cherche à observer, ce qui pourrait mal tourner et la réponse de conception prévue.</p>
+    </div>
+
+    <div class="dim-impact">
+      <article>
+        <h3>Dimension sociale</h3>
+        <dl>
+          <dt>Bénéfice attendu</dt>
+          <dd>Accès gratuit à des biens de première nécessité, sans justification ni dossier, dans son propre quartier.</dd>
+          <dt>Risque identifié</dt>
+          <dd>Une plateforme de dons peut transformer la demande en vitrine : honte, files visibles, concurrence entre demandeurs.</dd>
+          <dt>Mitigation de conception</dt>
+          <dd>Aucune photo de bénéficiaire, aucun justificatif demandé, quartier approximatif seulement, remise en main propre sans audience.</dd>
+        </dl>
+      </article>
+
+      <article>
+        <h3>Dimension environnementale</h3>
+        <dl>
+          <dt>Bénéfice attendu</dt>
+          <dd>Un objet réutilisé localement est un objet qui n'est ni jeté ni remplacé : moins de déchets, moins d'achat neuf.</dd>
+          <dt>Risque identifié</dt>
+          <dd>Un flux de dons mal filtré devient un flux de déchets : objets cassés, périmés, invendables, refilés à la décharge.</dd>
+          <dt>Mitigation de conception</dt>
+          <dd>Validation par une association avant publication, état annoncé obligatoire, conseils de propreté sur chaque annonce.</dd>
+        </dl>
+      </article>
+
+      <article>
+        <h3>Dimension économique</h3>
+        <dl>
+          <dt>Bénéfice attendu</dt>
+          <dd>Un budget ménage allégé sur l'essentiel (rentrée scolaire, hygiène, alimentation de base) peut se reporter sur autre chose.</dd>
+          <dt>Risque identifié</dt>
+          <dd>Un marché parallèle : des personnes revendraient les dons au lieu de les utiliser, ou des annonces déguisées en ventes.</dd>
+          <dt>Mitigation de conception</dt>
+          <dd>Le prototype n'affiche aucun prix et interdit tout paiement ; la modération peut retirer toute annonce suspecte.</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="band-ink" aria-labelledby="titre-limites">
+    <div class="container">
+      <h2 id="titre-limites">Ce qui n'est pas encore vrai dans ce prototype</h2>
+      <ul class="limites">
+        <li>Aucun utilisateur réel : les annonces et les demandes sont des données fictives écrites pour la démonstration.</li>
+        <li>Aucun serveur : tout fonctionne dans le navigateur, dans un espace de stockage local qui se vide avec les données du site.</li>
+        <li>Aucune vérification d'identité : le rôle « association » est un interrupteur de démonstration, pas un contrôle réel.</li>
+        <li>Aucune mesure d'impact : les trois dimensions ci-dessus restent des hypothèses tant qu'un pilote local avec une association n'a pas été mené.</li>
+        <li>Aucune reconnaissance officielle : ce projet n'est ni endossé ni affilié à l'Organisation des Nations unies.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="contenu-prose">
+      <h2>Et après ?</h2>
+      <p>La suite logique du prototype est un pilote local : une association réelle, un quartier, quelques dizaines de dons. C'est à ce moment-là seulement que l'utilité réelle, les abus possibles et l'impact sur les budgets des ménages deviennent mesurables. Avant cela, cette application reste un exercice de conception, présenté comme tel.</p>
+      <p><a href="https://sdgs.un.org/goals/goal1" target="_blank" rel="noopener noreferrer">Consulter l'ODD 1 sur le site officiel de l'ONU</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer container">
+  <div>
+    <p class="wordmark">Solidarité<strong>+</strong></p>
+    <p>Prototype étudiant EMSI, année 2026, réalisé dans le cadre de l'ODD 1 : Pas de pauvreté. Ce n'est pas une plateforme en service : une expérimentation locale reste à mener.</p>
+  </div>
+  <nav aria-label="Liens du site">
+    <h4>Application</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="dons.html">Le registre des dons</a></li>
+      <li><a href="proposer.html">Proposer un don</a></li>
+      <li><a href="demandes.html">Mes demandes</a></li>
+      <li><a href="association.html">Espace association</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Infos projet">
+    <h4>Projet</h4>
+    <ul>
+      <li><a class="actuel" href="a-propos.html">À propos et ODD 1</a></li>
+      <li><a href="https://sdgs.un.org/goals/goal1" target="_blank" rel="noopener noreferrer">ODD 1 sur le site de l'ONU</a></li>
+      <li><a href="connexion.html">Connexion de démonstration</a></li>
+    </ul>
+  </nav>
+  <div class="credits-photos">
+    <p>Illustrations vectorielles réalisées pour ce prototype (aucune photographie externe). Pour utiliser de vraies photos : remplacez les fichiers du dossier assets/img et ajustez le tableau IMG_PAR_CATEGORIE dans js/data.js. Les objets décrivent des catégories, pas des annonces réelles.</p>
+  </div>
+</footer>
+
+<script>
+/* Session dans l'en-tête (page statique sans script de page dédié) */
+window.addEventListener("DOMContentLoaded", () => {
+  if (typeof Store !== "undefined" && typeof majHeaderSession === "function") {
+    Store.load();
+    majHeaderSession();
+  }
+});
+</script>
+
+</body>
+</html>

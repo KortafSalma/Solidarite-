@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connexion de démonstration Solidarité+ : aucun mot de passe, aucun serveur, une session locale pour essayer les trois rôles du prototype.">
+  <title>Connexion (démonstration) | Solidarité+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/connexion.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="index.html">Solidarité<strong>+</strong></a>
+
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="dons.html">Le registre des dons</a>
+      <a href="proposer.html">Proposer un don</a>
+      <a href="a-propos.html">À propos</a>
+    </nav>
+
+    <div class="nav-actions">
+      <p class="session-chip" aria-live="polite"></p>
+      <details class="nav-details">
+        <summary class="nav-burger-menu">Menu</summary>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="dons.html">Le registre des dons</a></li>
+          <li><a href="proposer.html">Proposer un don</a></li>
+          <li><a href="tableau-de-bord.html">Espace personnel</a></li>
+          <li><a href="association.html">Espace association</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a class="actuel" href="connexion.html">Se connecter</a></li>
+        </ul>
+      </details>
+      <a class="btn btn-ghost connexion-desktop" href="connexion.html">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<p class="env-note"><span class="container">Mode démonstration locale : il n'y a ni mot de passe ni compte réel. La session choisie reste dans ce navigateur et ne sert qu'à remplir l'en-tête et ouvrir l'espace association.</span></p>
+
+<main id="contenu" class="container">
+
+  <section class="page-intro">
+    <h1>Connexion de démonstration</h1>
+    <p>Ce prototype n'a pas de comptes réels : le formulaire ci-dessous enregistre un nom et un rôle dans ce navigateur, pour essayer les trois points de vue de la plateforme. Demander de l'aide ne nécessite aucune connexion.</p>
+  </section>
+
+  <div class="publier">
+    <div>
+      <h2>Trois rôles, un même site</h2>
+      <dl class="fiche">
+        <div><dt>Donneur</dt><dd>Publie des annonces, suit ses dons dans l'espace personnel.</dd></div>
+        <div><dt>Demandeur</dt><dd>Ouvre une annonce et demande l'objet, sans justificatif.</dd></div>
+        <div><dt>Association</dt><dd>Valide, refuse ou signale les annonces et répond aux demandes.</dd></div>
+      </dl>
+      <p class="securite-note">Aucune vérification d'identité n'existe dans le prototype : choisir le rôle « association » ne confère aucune réalité. Une vraie plateforme exigerait des comptes, un serveur et une politique de confidentialité.</p>
+    </div>
+
+    <form class="form-card" id="form-session" novalidate>
+      <div class="field">
+        <label for="session-nom">Votre nom (démonstration)</label>
+        <input id="session-nom" name="nom" type="text" maxlength="40" autocomplete="off" aria-describedby="err-nom">
+        <p class="erreur" id="err-nom" hidden>Indiquez un nom de 2 caractères au moins. Un prénom fictif suffit : « Salma (exemple) ».</p>
+      </div>
+
+      <div class="field">
+        <label for="session-role">Rôle à essayer</label>
+        <select id="session-role" name="role" aria-describedby="aide-role">
+          <option value="demandeur">Demandeur : je cherche un objet</option>
+          <option value="donneur">Donneur : je propose un objet</option>
+          <option value="association">Association : je modère le registre</option>
+        </select>
+        <p class="aide" id="aide-role">Le rôle « association » ouvre la file de modération de l'espace association.</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Ouvrir la session (démo)</button>
+
+      <div class="notice notice-succes" id="session-confirmee" hidden role="status">
+        <p><b>Session de démonstration ouverte.</b> Elle reste dans ce navigateur. <a href="index.html">Retour à l'accueil</a>.</p>
+      </div>
+
+      <div class="notice notice-info" id="session-existante" hidden>
+        <p><b>Une session de démonstration est déjà ouverte :</b> <span id="session-courante"></span>.</p>
+        <p><button type="button" class="btn-quiet" id="deconnexion">Se déconnecter</button></p>
+      </div>
+    </form>
+  </div>
+
+</main>
+
+<footer class="site-footer container">
+  <div>
+    <p class="wordmark">Solidarité<strong>+</strong></p>
+    <p>Prototype étudiant EMSI, année 2026, réalisé dans le cadre de l'ODD 1 : Pas de pauvreté. Ce n'est pas une plateforme en service : une expérimentation locale reste à mener.</p>
+  </div>
+  <nav aria-label="Liens du site">
+    <h4>Application</h4>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="dons.html">Le registre des dons</a></li>
+      <li><a href="proposer.html">Proposer un don</a></li>
+      <li><a href="demandes.html">Mes demandes</a></li>
+      <li><a href="association.html">Espace association</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Infos projet">
+    <h4>Projet</h4>
+    <ul>
+      <li><a href="a-propos.html">À propos et ODD 1</a></li>
+      <li><a href="https://sdgs.un.org/goals/goal1" target="_blank" rel="noopener noreferrer">ODD 1 sur le site de l'ONU</a></li>
+      <li><a class="actuel" href="connexion.html">Connexion de démonstration</a></li>
+    </ul>
+  </nav>
+  <div class="credits-photos">
+    <p>Illustrations vectorielles réalisées pour ce prototype (aucune photographie externe). Pour utiliser de vraies photos : remplacez les fichiers du dossier assets/img et ajustez le tableau IMG_PAR_CATEGORIE dans js/data.js. Les objets décrivent des catégories, pas des annonces réelles.</p>
+  </div>
+</footer>
+
+</body>
+</html>
